@@ -1,0 +1,28 @@
+<div class="container flex" ng-controller="login" data-margin>
+  <form id="login" style="margin-block: auto" ng-submit="onSubmit($event)">
+    <h2 class="title">Login</h2>
+    <div class="control_wrap">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        class="control"
+        required />
+    </div>
+    <div class="control_wrap">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="control"
+        required />
+    </div>
+    <button type="submit" class="btn btn-mui" >Login</button>
+    <a class="link" style="margin-left: 1.7rem; font-size: 15px" href="#!register"
+      >Register</a
+    >
+  </form>
+</div>
+

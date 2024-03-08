@@ -1,0 +1,30 @@
+<div class="wrapper" ng-controller="todos" data-margin>
+  <form id="todo_add">
+    <h2 style="margin-bottom: 2rem; color: rgb(var(--slate_700));">Add new todo</h2>
+    <div class="control_wrap">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" class="control" required />
+    </div>
+    <div class="control_wrap">
+      <label for="description">Description</label>
+      <textarea type="text" name="description" id="description" class="control" required rows="6" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-mui">Add Todo</button>
+  </form>
+  <div class="container grid" data-has-padding style="--padding: 0.75rem">
+    <div class="card" ng-repeat="card in cards">
+      <h4 class="card-title">Todo List 1</h4>
+      <h5 class="date">20-10-2022</h5>
+      <p class="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+        asperiores saepe laudantium enim pariatur libero labore ipsa,
+        reprehenderit dolores nobis accusantium suscipit voluptatem eius dolorum
+        repellat id odit recusandae veniam doloribus ipsam! Sed harum illum,
+        ipsa nam ipsam atque suscipit perferendis voluptatibus, omnis veniam
+        minus necessitatibus? Ab placeat dicta amet.
+      </p>
+      <button class="actionbtn done">&#9989;</button>
+      <button class="actionbtn more">&#128221;</button>
+    </div>
+  </div>
+</div>

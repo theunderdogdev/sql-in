@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TODO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/angular.min.js"></script>
+    <script src="/static/angular-route.min.js"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/utils.js" defer></script>
+    <script src="/static/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="nav-link" ng-href="#!">Home</a>
+        <a class="nav-link" ng-href="#!register">Register</a>
+        <a class="nav-link" ng-href="#!todos">Todos</a>
+    </nav>
+
+    <ng-view>
+
+    </ng-view>
+</body>
+</html>
