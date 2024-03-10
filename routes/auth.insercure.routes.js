@@ -20,8 +20,7 @@ insecAuthRouter.post("/register", (req, res) => {
 
 insecAuthRouter.post("/login", (req, res) => {
   const { username, password } = req.body;
-  console.log(`select userid, username, password from users where username = ${username}`);
-  dbInstance.get(`select userid, username, password from users where username = ${username}`, (err, row) => {
+  dbInstance.get(`select userid, username, password from users where username = '${username}'`, (err, row) => {
     if (err) {
       console.log(err);
       return res.status(500).json(new ApiResponse({ statusCode: 500, message: "Login Failed" }));
