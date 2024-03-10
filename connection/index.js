@@ -7,7 +7,7 @@ const dbInstance = new sql3.Database("./databases/todo.db", (err) => {
   }
   // Creating users table
   dbInstance.run(
-    "create table if not exists users(userid varchar(36) primary key, username varchar(20) unique, password char(60), full_name varchar(40), email varchar(60) unique)",
+    "CREATE TABLE if not exists users(userid varchar(36) primary key, username varchar(20) unique, password char(60), full_name varchar(40), email varchar(60) unique);",
     (err) => {
       if (err) {
         console.log(err.message);
@@ -18,7 +18,7 @@ const dbInstance = new sql3.Database("./databases/todo.db", (err) => {
   );
   // Creating todos table
   dbInstance.run(
-    "create table if not exists todos(todo_id varchar(36) primary key, content varchar(257), completed bool, doc date);", (err)=>{
+    "CREATE TABLE if not exists todos(todo_id varchar(36) primary key, description varchar(257), completed boolean, doc datetime, owner varchar(36), FOREIGN KEY(owner) REFERENCES users(userid));", (err)=>{
       if(err){
         console.log(err.message);
         return

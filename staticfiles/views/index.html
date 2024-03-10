@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="TODO">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
     <link rel="stylesheet" href="/static/style.css" />
     <script src="/static/angular.min.js"></script>
@@ -10,16 +10,17 @@
     <script src="/static/jquery.min.js"></script>
     <script src="/static/utils.js" defer></script>
     <script src="/static/main.js" defer></script>
-</head>
-<body>
-    <nav class="navbar">
-        <a class="nav-link" ng-href="#!">Home</a>
-        <a class="nav-link" ng-href="#!register">Register</a>
-        <a class="nav-link" ng-href="#!todos">Todos</a>
+  </head>
+  <body>
+    <nav class="navbar" ng-controller="navigation">
+      <a class="nav-link" ng-href="#!">Home</a>
+      <a class="nav-link" ng-href="#!register">Register</a>
+      <a class="nav-link" ng-href="#!todos">Todos</a>
+      <button class="btn icon-btn" style="margin-right: 1.2rem" ng-click="onNavToggle()">
+        <span class="material-symbols-rounded"> playlist_add </span>
+      </button>
     </nav>
 
-    <ng-view>
-
-    </ng-view>
-</body>
+    <ng-view> </ng-view>
+  </body>
 </html>

@@ -1,58 +1,23 @@
-
-    <div class="container flex" data-margin>
-      <form id="register" style="margin-block: auto">
-        <h2 class="title">Create Account</h2>
-        <div class="control_wrap">
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" class="control" required />
-        </div>
-        <div class="control_wrap">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            class="control"
-            required />
-        </div>
-        <div class="control_wrap">
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="control"
-            required />
-        </div>
-        <div class="control_wrap">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="control"
-            required />
-        </div>
-        <button type="submit" class="btn btn-mui">Create</button>
-        <a class="link" style="margin-left: 1.7rem; font-size: 15px;" href="#!/">Login</a>
-      </form>
+<div class="container flex" data-margin ng-controller="register">
+  <form id="register" ng-submit="registerUser($event)" style="margin-block: auto">
+    <h2 class="title">Create Account</h2>
+    <div class="control_wrap">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" class="control" required />
     </div>
-  
-<script>
-  $(function () {
-    console.log("JQUERY");
-    $("form#register").on("submit", function (evt) {
-      evt.preventDefault();
-      const data = serializeObject($(this).serializeArray());
-      $.ajax({
-        url: "/api/auth/register",
-        method: "post",
-        contentType: "application/json",
-        data: JSON.stringify(data),
-        success(resp, stat, xhr){
-            console.log(resp)
-        }
-      });
-    });
-  });
-</script>
+    <div class="control_wrap">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="control" required />
+    </div>
+    <div class="control_wrap">
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" class="control" required />
+    </div>
+    <div class="control_wrap">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="control" required />
+    </div>
+    <button type="submit" class="btn btn-mui">Create</button>
+    <a class="link" style="margin-left: 1.7rem; font-size: 15px" href="#!/">Login</a>
+  </form>
+</div>

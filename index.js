@@ -4,7 +4,8 @@ const { resolve } = require("path");
 const session = require("express-session");
 const SQLiteStore = require("connect-sqlite3")(session);
 const authRouter = require("./routes/auth.routes");
-const viewsRouter = require("./routes/views.routes");
+const todosRouter = require("./routes/todos.routes");
+const insecAuthRouter = require("./routes/auth.insercure.routes");
 const app = express();
 app.use(express.json());
 app.use("/static", express.static(resolve("./staticfiles")));
@@ -32,7 +33,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
-
+app.use('/api/insecure/auth', insecAuthRouter)
+app.use('/api/todos', todosRouter);
 app.listen(4100, () => {
   console.log("http://localhost:4100/");
 });
